@@ -71,8 +71,6 @@ const onChange = function (attr, value) {
                                     :errorMessage="errorMessage" />
                             </Field>
                         </div>
-                    </div>
-                    <div class="row items-center justify-between" style="padding: 4px 12px 10px 12px">
                         <div class="column col-5">
                             <Field as="div" name="first" rules="required|min:3" v-slot="{ errorMessage, field, meta }">
                                 <UiQuasarInput v-model="formData.first" label="Имя"
@@ -90,22 +88,20 @@ const onChange = function (attr, value) {
                                     :errorMessage="errorMessage" />
                             </Field>
                         </div>
-                    </div>
-                    <div class="row items-center justify-between" style="padding: 4px 12px 10px 12px">
                         <div class="column col-5">
-                            <Field as="div" name="agree" rules="required|min:3" v-slot="{ errorMessage, field, meta }">
-                                <UiQuasarCheckbox v-model="formData.agree"
-                                    label="Даю согласие на обработку персональных данных"
-                                    :invalid="meta.touched ? !meta.valid : null" :field="field"
-                                    :errorMessage="errorMessage" />
-                            </Field>
+                            <Field as="div" name="notes" v-slot="{ field }">
+                            <q-input type="textarea" v-model="formData.notes" counter maxlength="512" rows="5" autogrow
+                                label="Notes" style="background: rgba(255, 255, 255, 0.05)" hint="" v-bind="field" />
+                        </Field>
                         </div>
                     </div>
                     <br />
                     <div style="padding: 4px 12px 10px 12px">
-                        <Field as="div" name="notes" v-slot="{ field }">
-                            <q-input type="textarea" v-model="formData.notes" counter maxlength="512" rows="5" autogrow
-                                label="Notes" style="background: rgba(255, 255, 255, 0.05)" hint="" v-bind="field" />
+                        <Field as="div" name="agree" rules="required|min:3" v-slot="{ errorMessage, field, meta }">
+                                <UiQuasarCheckbox v-model="formData.agree"
+                                    label="Даю согласие на обработку персональных данных"
+                                    :invalid="meta.touched ? !meta.valid : null" :field="field"
+                                    :errorMessage="errorMessage" />
                         </Field>
                     </div>
                     <UiQuasarToggle :onChange="onChange" :extended="formData.extended"></UiQuasarToggle>
