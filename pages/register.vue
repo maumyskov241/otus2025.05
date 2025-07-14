@@ -56,7 +56,7 @@ const onChange = function (attr, value) {
     <div class="q-pl-md">
         <h1 class="text-h4 text-weight-bold">Quasar + vee-validate v4</h1>
         <div class="q-mt-md q-gutter-md">
-            <slide-up-down v-model="create" :duration="450" style="position: relative">
+           <!-- <slide-up-down v-model="create" :duration="450" style="position: relative">-->
                 <Form @submit="onSubmit" ref="obs" name="formDataForm" v-slot="{ meta: formeta, submitted }">
                     <br />
                     {{ formData }}
@@ -156,7 +156,7 @@ const onChange = function (attr, value) {
                         </div>
                     </div>
                 </Form>
-            </slide-up-down>
+           <!--</slide-up-down>-->
         </div>
     </div>
 

@@ -58,7 +58,7 @@
         </q-card>
       </q-expansion-item>
     </q-list>
-    <NuxtLink to="/register"><LazyQBtn color="primary"  glossy label="Зарегистрироваться" ></LazyQBtn></NuxtLink>
+    <div class="row center"><NuxtLink to="/register"><LazyQBtn color="primary"  glossy label="Зарегистрироваться" ></LazyQBtn></NuxtLink></div>
   </div>   
     </q-drawer>
 
@@ -106,3 +106,8 @@ import { ref } from 'vue'
     
 
 </script>
+<style>
+.row.center {
+    justify-content: center;
+}
+</style>
