@@ -1,6 +1,7 @@
 <script setup>
 import { Form, Field, defineRule } from "vee-validate";
 import { required, email, min, max, confirmed, is } from "@vee-validate/rules";
+//import  SlideUpDown from 'vue3-slide-up-down'; Вылетает 500 ошибка
 
 defineRule("required", (value) => (required(value) ? true : "Заполните!"));
 defineRule("is", (value) => (is(value) ? true : "Заполните!"));
@@ -9,6 +10,7 @@ defineRule("min", (value, [length]) =>
     min(value, [length]) ? true : `${length} символа или более, краткость не всегда сестра таланта!`
 );
 const create = ref(true)
+const mode = ref(true)
 const formData = reactive({
     last: null,
     first: null,
@@ -55,7 +57,7 @@ const onChange = function (attr, value) {
         <h1 class="text-h4 text-weight-bold">Quasar + vee-validate v4</h1>
         <div class="q-mt-md q-gutter-md">
             <slide-up-down v-model="create" :duration="450" style="position: relative">
-                <Form @submit="onSubmit" ref="obs" name="formDataForm" v-slot="{ meta: formeta }">
+                <Form @submit="onSubmit" ref="obs" name="formDataForm" v-slot="{ meta: formeta, submitted }">
                     <br />
                     {{ formData }}
                     <br />

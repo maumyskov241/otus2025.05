@@ -10,47 +10,9 @@ const {data} =  await useAsyncData('', () => $fetch('https://fakestoreapi.com/pr
 </script>
 <template>
 
-<div id="wrapper">
- <div class="q-pa-md bg-grey-9 text-white">
-    <q-list dark padding bordered class="rounded-borders" style="max-width: 328px">
-      <q-expansion-item
-        icon="perm_identity"
-        label="Лояльность"
-      >
-        <q-card class="bg-grey-9">
-          <q-card-section>
-            Зарегистрируйтесь и получите скидку в 10%!
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-
-      <q-expansion-item
-        icon="signal_wifi_off"
-        label="Доставка"
-      >
-        <q-card class="bg-grey-9">
-          <q-card-section>
-            Возможна аж до подъезда
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-
-      <q-expansion-item
-        icon="drafts"
-        label="Партнерам"
-        header-class="text-orange"
-      >
-        <q-card class="bg-grey-9">
-          <q-card-section>
-            Будете всегда ходить с улыбкой на лице, находясь в приятном шоке от нас!
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-    </q-list>
-    <NuxtLink to="/register"><LazyQBtn color="primary"  glossy label="Зарегистрироваться" ></LazyQBtn></NuxtLink>
-  </div>    
-<div class="q-pa-md row items-start q-gutter-md" style="flex-wrap: inherit">
-    <q-card class="my-card" flat bordered :key="product.id" v-for="product in data">
+<div id="wrapper">   
+<div class="q-pa-md row items-start q-gutter-md row">
+    <q-card class="my-card"  flat bordered :key="product.id" v-for="product in data">
       <q-card-section >
         <q-card-section class="q-pt-xs">
           <div class="text-overline">{{product.category}}</div>
@@ -87,6 +49,18 @@ const {data} =  await useAsyncData('', () => $fetch('https://fakestoreapi.com/pr
 #wrapper {
     display: flex;
    
+}
+
+.q-card .text-caption {
+  min-height:180px;
+}
+
+.q-card.my-card {
+  width:30%;
+}
+
+.q-card .text-h5 {
+  min-height: 65px;
 }
 
 html .bg-grey-9 {

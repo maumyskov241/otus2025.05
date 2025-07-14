@@ -1,6 +1,11 @@
+<script setup>
+import Wrapper from './layout/wrapper.vue'
+</script>
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtPage />
+    <Wrapper>
+      <NuxtPage />
+    </Wrapper>
   </div>
 </template>
