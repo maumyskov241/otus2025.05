@@ -34,7 +34,7 @@
 const props = defineProps({ name: String, source : Object, onChange : Function});
 const img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAH0lEQVQoU2NkYGAwZkAFZ5G5jPRRgOYEVDeB3EBjBQBOZwTVugIGyAAAAABJRU5ErkJggg=='
 const source = ref(props.source);
-watch(source, (newSource) => {console.log(source)
+watch(source, (newSource) => {
    props.onChange(props.name, newSource)
 });
 </script>

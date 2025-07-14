@@ -16,7 +16,7 @@
 
 const props = defineProps({ name: String, range : Object, onChange : Function});
 const range = ref(props.range);
-watch(range, (newRange) => {console.log(range)
+watch(range, (newRange) => {
    props.onChange(props.name, newRange)
 });
 </script>

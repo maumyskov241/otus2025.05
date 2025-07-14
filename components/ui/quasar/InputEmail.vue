@@ -11,14 +11,14 @@
           </div>
         </template>
       </q-input>
-      
+
     </div>
   </div>
 </template>
 
 <script setup>
 
-const props = defineProps({ name: String, model : Array, onChange : Function});
+const props = defineProps({ name: String, model : String, onChange : Function});
 const model = ref(props.model);
 
 watch(model, (newModel) => {
