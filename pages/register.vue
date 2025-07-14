@@ -17,7 +17,7 @@ const formData = reactive({
     agree: false,
     extended: false,
     gender: 'male',
-    categories: [],
+    categories: [{ "value": 0, "label": "men's clothing" }],
     email2: 'john.doe',
     phone: '9261020008',
     cardExpire: '0729',
